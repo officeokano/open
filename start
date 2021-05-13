@@ -1,3 +1,5 @@
 #!/bin/bash
 # start command for WSL
-/mnt/c/Windows/System32/cmd.exe /c explorer.exe $@ &
+if [ ! -z $1 ] ; then
+    /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Start-Process $@ &
+fi
